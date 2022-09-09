@@ -59,12 +59,9 @@ const Clients = () => {
       <Drawer
         PaperProps={{
           sx: {
-            backgroundColor: 'rgba(30, 139, 220, 0.6)',
-            display: 'flex',
-            //Vertical align
-            //  justifyContent: 'center',
-            alignItems: 'center',
             width: 450,
+            px: 4,
+            py: 9,
           },
         }}
         open={open}
@@ -82,11 +79,8 @@ const Clients = () => {
           component="form"
           sx={{
             display: 'block',
-            alignItems: 'center',
-            justifyContent: 'center',
             listStyle: 'none',
-            borderRadius:'8px',
-            bgcolor: 'white'
+            py: '10px',
           }}
           noValidate
           autoComplete="off"
@@ -98,13 +92,19 @@ const Clients = () => {
             }}
             id="filled-basic"
             label="Add your address"
-            variant="filled"
+            variant="outlined"
+            fullWidth
           />
         </Box>
         <Stack spacing={2} direction="row">
-          <Box sx={{ width: 'auto', m: 'auto', py: '20px', display: 'block',}}>
+          <Box
+            sx={{
+              py: '10px',
+              display: 'block',
+              marginLeft: 'auto'
+            }}
+          >
             <Button
-            sx={{backgroundColor: '#001e3cfa'}}
               variant="contained"
               endIcon={<SendIcon />}
               onClick={() => {

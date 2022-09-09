@@ -17,12 +17,9 @@ export const ChipArray = ({ data, handleDelete }: ChipArrayProps) => (
       display: 'block',
       flexWrap: 'wrap',
       listStyle: 'none',
-      bgcolor: "white",
-      px: 8,
-      m: 3,
-      mt: 10,
       maxWidth: '400px',
-      borderRadius: '15px'
+      p: 2,
+      my: '10px'
     }}
     component="ul"
   >
@@ -31,9 +28,7 @@ export const ChipArray = ({ data, handleDelete }: ChipArrayProps) => (
         <ListItem
         sx={{
           display: 'block',
-          py: 0,
-          px: 0,
-          m: 2,
+          py: 0.8,
         }}
           key={index}
         >
