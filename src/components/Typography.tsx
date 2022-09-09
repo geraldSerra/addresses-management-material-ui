@@ -8,10 +8,10 @@ export default function Types() {
         width: '100%',
         //maxWidth: 500,
         textAlign: 'center',
-        marginBlock: '30px',
+        marginTop: '20px',
       }}
     >
-      <Typography variant="h1" gutterBottom>
+      <Typography variant="h1">
         Clients
       </Typography>
     </Box>

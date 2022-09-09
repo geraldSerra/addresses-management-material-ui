@@ -18,10 +18,11 @@ export const ChipArray = ({ data, handleDelete }: ChipArrayProps) => (
       flexWrap: 'wrap',
       listStyle: 'none',
       bgcolor: "white",
-      px: 0,
+      px: 8,
       m: 3,
       mt: 10,
-      maxHeight: '500px'
+      maxWidth: '400px',
+      borderRadius: '15px'
     }}
     component="ul"
   >
@@ -30,7 +31,6 @@ export const ChipArray = ({ data, handleDelete }: ChipArrayProps) => (
         <ListItem
         sx={{
           display: 'block',
-          justifyContent: '',
           py: 0,
           px: 0,
           m: 2,

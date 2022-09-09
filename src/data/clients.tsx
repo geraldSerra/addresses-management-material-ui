@@ -36,7 +36,7 @@ export const clients = [
   {
     id: 3,
     name: 'Smerling',
-    lastName: 'Valera',
+    lastName: 'Varela',
     addresses: ['San Cristobal, Haina'],
     age: 24,
     email:'Smerling@gmail.com',

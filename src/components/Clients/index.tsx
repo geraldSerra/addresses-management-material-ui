@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import { ChipArray } from '../ChipArray';
 import { Client, clients, columns } from '../../data/clients';
 import TextField from '@mui/material/TextField';
+import SendIcon from '@mui/icons-material/Send';
 
 const Clients = () => {
   const [open, setOpen] = useState(false);
@@ -37,41 +38,33 @@ const Clients = () => {
 
   columns[columns.length - 1].renderCell = () => <ExpandButton />;
 
-  let textAddress: string = '';
-
   return (
     <>
-      <Box
-        sx={{ width: '100%', backgroundColor: 'white', marginBlock: '30px' }}
-      >
-        <Box sx={{ height: 550, width: '100%', mb: 1 }}>
-          <DataGrid
-            rows={clients}
-            columns={columns}
-            pageSize={10}
-            rowsPerPageOptions={[5, 10, 15]}
-            onRowClick={(e) => {
-              setSelectedClient(
-                clients.filter((client) => client.id === e.id)[0]
-              );
-            }}
-            components={{
-              Toolbar: GridToolbar,
-            }}
-          />
-        </Box>
+      <Box sx={{ height: 550, width: '100%', mb: 1, mt: '15px' }}>
+        <DataGrid
+          rows={clients}
+          columns={columns}
+          pageSize={10}
+          rowsPerPageOptions={[5, 10, 15]}
+          onRowClick={(e) => {
+            setSelectedClient(
+              clients.filter((client) => client.id === e.id)[0]
+            );
+          }}
+          components={{
+            Toolbar: GridToolbar,
+          }}
+        />
       </Box>
-
       <Drawer
         PaperProps={{
           sx: {
-            // backgroundColor: 'rgba(30, 139, 220, 0.6)',
+            backgroundColor: 'rgba(30, 139, 220, 0.6)',
             display: 'flex',
-            //Vertical
+            //Vertical align
             //  justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: 'white',
-            width: 400,
+            width: 450,
           },
         }}
         open={open}
@@ -85,35 +78,35 @@ const Clients = () => {
           data={selectedClient?.addresses ?? []}
           handleDelete={handleDelete}
         />
-        <div
-          style={{
+        <Box
+          component="form"
+          sx={{
             display: 'block',
             alignItems: 'center',
+            justifyContent: 'center',
             listStyle: 'none',
-            backgroundColor: 'white',
-            borderRadius: '4px',
-            width: '200px',
-            height: '70px',
+            borderRadius:'8px',
+            bgcolor: 'white'
           }}
+          noValidate
+          autoComplete="off"
         >
           <TextField
             value={inputText}
-            disabled={false}
-            multiline={true}
             onChange={(e) => {
               setInputText(e.target.value);
             }}
-            id="outlined-basic"
-            color="primary"
+            id="filled-basic"
             label="Add your address"
-            variant="outlined"
-            sx={{ backgroundColor: 'white', px: 'auto' }}
+            variant="filled"
           />
-        </div>
+        </Box>
         <Stack spacing={2} direction="row">
-          <Box sx={{ width: 'auto', m: 'auto', py: '15px', display: 'block' }}>
+          <Box sx={{ width: 'auto', m: 'auto', py: '20px', display: 'block',}}>
             <Button
+            sx={{backgroundColor: '#001e3cfa'}}
               variant="contained"
+              endIcon={<SendIcon />}
               onClick={() => {
                 debugger;
                 if (inputText != '') {
