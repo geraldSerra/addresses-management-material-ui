@@ -20,7 +20,7 @@ export const clients = [
       'Distrito Nacional, Quisueya',
     ],
     age: 22,
-    email:'Gerald@gmail.com',
+    email:'gerald@gmail.com',
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ export const clients = [
       'Distrito nacional, Piantini',
     ],
     age: 21,
-    email:'Robert@gmail.com',
+    email:'robert@gmail.com',
   },
   {
     id: 3,
@@ -39,19 +39,19 @@ export const clients = [
     lastName: 'Varela',
     addresses: ['San Cristobal, Haina'],
     age: 24,
-    email:'Smerling@gmail.com',
+    email:'smerling@gmail.com',
   },
   {
     id: 4,
-    name: 'Pedro',
-    lastName: 'Santana',
+    name: 'Nissi',
+    lastName: 'Rojas',
     addresses: [
       'San Pedro, Los Coquitos',
       'Santo Domingo Este, Los Mina',
       'Barahona, La Caña',
     ],
     age: 19,
-    email:'Pedro@gmail.com',
+    email:'nissi@gmail.com',
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ export const clients = [
       'Distrito Nacional, El Millón',
     ],
     age: 29,
-    email:'Juan@gmail.com',
+    email:'juan@gmail.com',
   },
   {
     id: 6,
@@ -75,7 +75,7 @@ export const clients = [
       'San José De Ocoa, Montes del Sur',
     ],
     age: 32,
-    email:'Margarita@gmail.com',
+    email:'margarita@gmail.com',
   },
   {
     id: 7,
@@ -83,7 +83,7 @@ export const clients = [
     lastName: 'Franco',
     addresses: ['Santo Domingo Este, Villa Mella'],
     age: 35,
-    email:'Ramón@gmail.com',
+    email:'ramón@gmail.com',
   },
   {
     id: 8,
@@ -91,7 +91,7 @@ export const clients = [
     lastName: 'Mendez',
     addresses: ['Distrito Nacional', 'Km 8 de la Independencia'],
     age: 25,
-    email:'Omar@gmail.com',
+    email:'omar@gmail.com',
   },
   {
     id: 9,
@@ -99,7 +99,7 @@ export const clients = [
     lastName: 'Mella',
     addresses: ['Santo Domingo Este, Los Mameyes'],
     age: 24,
-    email:'Matías@gmail.com',
+    email:'matías@gmail.com',
   },
   {
     id: 10,
@@ -111,7 +111,7 @@ export const clients = [
       'Santo Domingo Este, La Cañita',
     ],
     age: 20,
-    email:'Esmeralda@gmail.com',
+    email:'esmeralda@gmail.com',
   },
 ];
 

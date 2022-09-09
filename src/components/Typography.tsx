@@ -6,9 +6,8 @@ export default function Types() {
     <Box
       sx={{
         width: '100%',
-        //maxWidth: 500,
-        textAlign: 'center',
         marginTop: '20px',
+        // maxWidth: 500,
       }}
     >
       <Typography variant="h1">
