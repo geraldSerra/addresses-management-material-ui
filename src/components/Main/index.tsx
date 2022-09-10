@@ -1,13 +1,13 @@
 import { Container } from '@mui/material';
-import Clients from '../Clients';
-import Types from '../Typography';
 import CssBaseline from '@mui/material/CssBaseline';
+import Types from '../Typography';
+import Clients from '../Clients';
 
 const Main = () => (
   <Container>
     <CssBaseline />
-    <Types />
-    <Clients />
+      <Types />
+      <Clients />
   </Container>
 );
 
