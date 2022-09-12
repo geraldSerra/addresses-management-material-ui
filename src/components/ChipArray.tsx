@@ -17,7 +17,6 @@ export const ChipArray = ({ data, handleDelete }: ChipArrayProps) => (
       display: 'block',
       flexWrap: 'wrap',
       listStyle: 'none',
-      maxWidth: '400px',
       p: 2,
       my: '10px'
     }}

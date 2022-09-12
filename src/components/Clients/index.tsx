@@ -59,7 +59,7 @@ const Clients = () => {
       <Drawer
         PaperProps={{
           sx: {
-            width: 450,
+            width: '40%',
             px: 4,
             py: 9,
           },
