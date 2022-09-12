@@ -101,7 +101,7 @@ const Clients = () => {
             sx={{
               py: '10px',
               display: 'block',
-              marginLeft: 'auto'
+              marginLeft: 'auto',
             }}
           >
             <Button
