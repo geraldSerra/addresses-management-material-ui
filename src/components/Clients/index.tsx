@@ -1,18 +1,22 @@
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import { DataGrid, GridRowId, GridToolbar } from '@mui/x-data-grid';
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { ChipArray } from '../ChipArray';
 import { Client, clients, columns } from '../../data/clients';
 import TextField from '@mui/material/TextField';
 import SendIcon from '@mui/icons-material/Send';
+import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material';
 
-const Clients = () => {
+export const Clients = () => {
   const [open, setOpen] = useState(false);
   const [selectedClient, setSelectedClient] = useState<Client>();
   const [inputText, setInputText] = useState('');
+  const matches = useMediaQuery(useTheme().breakpoints.up('sm'));
+  columns[columns.length - 1].renderCell = () => <ExpandButton />;
 
   const handleDelete = (arg: number) => {
     if (!selectedClient) return;
@@ -36,37 +40,38 @@ const Clients = () => {
     );
   };
 
-  columns[columns.length - 1].renderCell = () => <ExpandButton />;
-
   return (
     <>
-      <Box sx={{ height: 550, width: '100%', mb: 1, mt: '15px' }}>
-        <DataGrid
-          rows={clients}
-          columns={columns}
-          pageSize={10}
-          rowsPerPageOptions={[5, 10, 15]}
-          onRowClick={(e) => {
-            setSelectedClient(
-              clients.filter((client) => client.id === e.id)[0]
-            );
-          }}
-          components={{
-            Toolbar: GridToolbar,
-          }}
-        />
-      </Box>
+      <DataGrid
+        sx={{
+          height: 550,
+          width: '100%',
+          mb: 1,
+          mt: '15px',
+          mx: 'auto',
+        }}
+        rows={clients}
+        columns={columns}
+        pageSize={10}
+        rowsPerPageOptions={[5, 10, 15]}
+        onRowClick={(e) => {
+          setSelectedClient(clients.filter((client) => client.id === e.id)[0]);
+        }}
+        components={{
+          Toolbar: GridToolbar,
+        }}
+      />
       <Drawer
         PaperProps={{
           sx: {
-            width: '40%',
+            width:{xs: 'flex', sm: '40%' },
+            height:{xs: '55%', sm: '85%' },
             px: 4,
             py: 9,
           },
         }}
         open={open}
-        anchor="right"
-        hideBackdrop={false}
+        anchor={matches ? 'right' : 'bottom'}
         onClose={() => {
           setOpen(false);
         }}
@@ -90,7 +95,6 @@ const Clients = () => {
             onChange={(e) => {
               setInputText(e.target.value);
             }}
-            id="filled-basic"
             label="Add your address"
             variant="outlined"
             fullWidth
@@ -108,7 +112,6 @@ const Clients = () => {
               variant="contained"
               endIcon={<SendIcon />}
               onClick={() => {
-                debugger;
                 if (inputText != '') {
                   selectedClient?.addresses.push(inputText);
                 }
@@ -123,5 +126,3 @@ const Clients = () => {
     </>
   );
 };
-
-export default Clients;

@@ -1,9 +1,11 @@
 import { Container } from '@mui/material';
 import Types from '../Typography';
-import Clients from '../Clients';
+import { Clients } from '../Clients';
 
 const Main = () => (
-  <Container>
+  <Container  sx={{
+    width: {xs: '100%', sm: '80%' },
+  }}>
       <Types />
       <Clients />
   </Container>

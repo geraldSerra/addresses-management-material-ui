@@ -18,17 +18,17 @@ export const ChipArray = ({ data, handleDelete }: ChipArrayProps) => (
       flexWrap: 'wrap',
       listStyle: 'none',
       p: 2,
-      my: '10px'
+      my: '10px',
     }}
     component="ul"
   >
     {data.map((label, index) => {
       return (
         <ListItem
-        sx={{
-          display: 'block',
-          py: 0.8,
-        }}
+          sx={{
+            display: 'block',
+            py: 0.8,
+          }}
           key={index}
         >
           <Chip
