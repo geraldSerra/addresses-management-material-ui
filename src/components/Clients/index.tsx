@@ -1,22 +1,34 @@
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import { ChipArray } from '../ChipArray';
-import { Client, clients, columns } from '../../data/clients';
 import TextField from '@mui/material/TextField';
 import SendIcon from '@mui/icons-material/Send';
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
+
+import { ChipArray } from '../ChipArray';
+import { Client, clients, columns } from '../../data/clients';
 
 export const Clients = () => {
   const [open, setOpen] = useState(false);
   const [selectedClient, setSelectedClient] = useState<Client>();
   const [inputText, setInputText] = useState('');
+
   const matches = useMediaQuery(useTheme().breakpoints.up('sm'));
-  columns[columns.length - 1].renderCell = () => <ExpandButton />;
+  columns[columns.length - 1].renderCell = () => (
+    <Button
+      variant="outlined"
+      size="small"
+      onClick={() => {
+        setOpen(true);
+      }}
+    >
+      Expand
+    </Button>
+  );
 
   const handleDelete = (arg: number) => {
     if (!selectedClient) return;
@@ -24,20 +36,6 @@ export const Clients = () => {
       (_, index) => index !== arg
     );
     setSelectedClient({ ...selectedClient, addresses: newAddresses });
-  };
-
-  const ExpandButton = () => {
-    return (
-      <Button
-        variant="outlined"
-        size="small"
-        onClick={() => {
-          setOpen(true);
-        }}
-      >
-        Expand
-      </Button>
-    );
   };
 
   return (
@@ -64,8 +62,8 @@ export const Clients = () => {
       <Drawer
         PaperProps={{
           sx: {
-            width:{xs: 'flex', sm: '40%' },
-            height:{xs: '55%', sm: '85%' },
+            width: { xs: 'flex', sm: '40%' },
+            height: { xs: '55%', sm: '85%' },
             px: 4,
             py: 9,
           },
